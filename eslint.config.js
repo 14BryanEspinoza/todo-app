@@ -44,7 +44,7 @@ export default tseslint.config(
           varsIgnorePattern: '^_',
         },
       ],
-      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/classnames-order': 'off',
       'tailwindcss/no-custom-classname': 'off',
     },
   },
