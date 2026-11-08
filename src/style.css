@@ -1,1 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import 'tailwindcss';
+
+@theme {
+  --font-default: 'JetBrains Mono', monospace;
+
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-hover: #334155;
+
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-text-inverse: #0f172a;
+
+  --color-border: #334155;
+  --color-border-focus: #38bdf8;
+
+  --color-primary: #38bdf8;
+  --color-primary-hover: #7dd3fc;
+  --color-success: #4ade80;
+  --color-danger: #f87171;
+  --color-warning: #fbbf24;
+
+  --color-focus: #818cf8;
+}
+
+body {
+  font-family: var(--font-default);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid var(--color-focus);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
