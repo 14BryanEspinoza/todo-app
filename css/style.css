@@ -45,15 +45,15 @@
   --danger: #ef4444;
   --success: #10b981;
   --on-accent: #ffffff;
-  --font-main: "Inter", sans-serif;
-  --font-accent: "Patrick Hand", cursive;
+  --font-main: 'Inter', sans-serif;
+  --font-accent: 'Patrick Hand', cursive;
 }
 
-html[data-theme="light"] {
+html[data-theme='light'] {
   color-scheme: light;
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   color-scheme: dark;
 }
 
@@ -94,7 +94,7 @@ body {
 
 .bg-gradient::before,
 .bg-gradient::after {
-  content: "";
+  content: '';
   position: absolute;
   border-radius: 50%;
   will-change: transform;
@@ -222,11 +222,11 @@ body {
   transform: scale(0.95);
 }
 
-html[data-theme="light"] .icon--moon {
+html[data-theme='light'] .icon--moon {
   display: none;
 }
 
-html[data-theme="dark"] .icon--sun {
+html[data-theme='dark'] .icon--sun {
   display: none;
 }
 
@@ -552,7 +552,7 @@ html[data-theme="dark"] .icon--sun {
 }
 
 .item__check::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -566,7 +566,7 @@ html[data-theme="dark"] .icon--sun {
 }
 
 .item__check:checked::after {
-  content: "✓";
+  content: '✓';
   position: absolute;
   color: var(--on-accent);
   font-size: 0.8rem;
@@ -614,7 +614,7 @@ html[data-theme="dark"] .icon--sun {
 }
 
 .taskView__empty::before {
-  content: "";
+  content: '';
   display: block;
   width: 3rem;
   height: 3rem;
