@@ -1,9 +1,10 @@
-import { Header } from '@components';
+import { Header, Stats } from '@components';
 
 function App() {
   return (
-    <div className="flex h-dvh items-center justify-center">
+    <div className="flex h-dvh flex-col items-center justify-center gap-4">
       <Header />
+      <Stats />
     </div>
   );
 }
