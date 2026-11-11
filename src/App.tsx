@@ -1,10 +1,11 @@
-import { Header, Stats } from '@components';
+import { Header, Stats, BarProgress } from '@components';
 
 function App() {
   return (
-    <div className="flex h-dvh flex-col items-center justify-center gap-4">
+    <div className="mx-auto flex h-dvh max-w-md flex-col items-center justify-center gap-4">
       <Header />
       <Stats />
+      <BarProgress />
     </div>
   );
 }
