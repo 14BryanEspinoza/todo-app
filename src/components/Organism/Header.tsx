@@ -13,7 +13,7 @@ export const Header = () => {
       <Button
         type="button"
         ariaLabel="color de tema"
-        className="border-border bg-surface text-text-muted size-10 border p-2"
+        className="border-border bg-surface text-text-muted hover:bg-surface-hover size-10 border p-2"
       >
         <Moon />
       </Button>

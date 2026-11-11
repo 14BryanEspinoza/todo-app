@@ -20,7 +20,7 @@ const tasks = [
 
 export const Stats = () => {
   return (
-    <section className="mb-4 flex justify-between gap-4">
+    <section className="flex justify-between gap-4">
       {tasks.map((task) => (
         <StatsItem {...task} />
       ))}

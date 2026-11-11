@@ -15,7 +15,7 @@ export const Button = ({ children, type, ariaLabel, className }: Props) => {
     <button
       type={type}
       aria-label={ariaLabel}
-      className={styleBase + className}
+      className={`${styleBase} ${className}`}
     >
       {children}
     </button>
