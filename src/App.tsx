@@ -1,4 +1,11 @@
-import { Header, Stats, BarProgress, TaskForm, Footer } from '@components';
+import {
+  Header,
+  Stats,
+  BarProgress,
+  TaskForm,
+  Footer,
+  Filters,
+} from '@components';
 
 function App() {
   return (
@@ -6,7 +13,10 @@ function App() {
       <Header />
       <Stats />
       <BarProgress />
-      <TaskForm />
+      <div className="border-border bg-surface w-full rounded-xl border p-4">
+        <TaskForm />
+        <Filters />
+      </div>
       <Footer />
     </div>
   );
