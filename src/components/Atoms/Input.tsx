@@ -26,6 +26,7 @@ export const Input = ({ name, control, label, type, error }: Props) => {
             id={name}
             type={type}
             {...field}
+            placeholder="Agrega una nueva tarea"
             className={`${styleBase} ${error ? 'border-danger' : ''}`}
           />
         )}

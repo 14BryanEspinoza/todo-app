@@ -19,10 +19,7 @@ export const TaskForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="border-border bg-surface flex w-full items-start gap-2 rounded-2xl border p-4"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="flex items-start gap-2">
       <Input
         name="task"
         control={control}
