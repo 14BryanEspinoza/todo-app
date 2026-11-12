@@ -9,3 +9,4 @@ export * from './Molecules/Stats';
 
 // Organism
 export * from './Organism/Header';
+export * from './Organism/Footer';
