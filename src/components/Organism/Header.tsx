@@ -1,4 +1,4 @@
-import { Moon } from 'lucide-react';
+import { FiMoon } from 'react-icons/fi';
 import { Button, Time } from '@components';
 
 export const Header = () => {
@@ -15,7 +15,7 @@ export const Header = () => {
         ariaLabel="color de tema"
         className="border-border bg-surface text-text-muted hover:bg-surface-hover size-10 border p-2"
       >
-        <Moon />
+        <FiMoon size={20} />
       </Button>
     </header>
   );
