@@ -1,6 +1,7 @@
 // Atoms
 export * from './Atoms/BarProgress';
 export * from './Atoms/Button';
+export * from './Atoms/Input';
 export * from './Atoms/StatsItem';
 export * from './Atoms/Time';
 
@@ -8,5 +9,6 @@ export * from './Atoms/Time';
 export * from './Molecules/Stats';
 
 // Organism
-export * from './Organism/Header';
 export * from './Organism/Footer';
+export * from './Organism/Header';
+export * from './Organism/TaskForm';

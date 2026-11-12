@@ -1,4 +1,4 @@
-import { Header, Stats, BarProgress, Footer } from '@components';
+import { Header, Stats, BarProgress, TaskForm, Footer } from '@components';
 
 function App() {
   return (
@@ -6,6 +6,7 @@ function App() {
       <Header />
       <Stats />
       <BarProgress />
+      <TaskForm />
       <Footer />
     </div>
   );
