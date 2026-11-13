@@ -22,7 +22,7 @@ export const Stats = () => {
   return (
     <section className="flex justify-between gap-4">
       {tasks.map((task) => (
-        <StatsItem {...task} />
+        <StatsItem key={task.id} {...task} />
       ))}
     </section>
   );

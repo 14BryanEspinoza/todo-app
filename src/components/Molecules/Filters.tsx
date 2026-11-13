@@ -10,6 +10,7 @@ export const Filters = () => {
       {filtersContent.map((item) => {
         return (
           <Button
+            key={item.id}
             type="button"
             ariaLabel={item.ariaLabel}
             className={`${styleBase} ${item.colorText}`}

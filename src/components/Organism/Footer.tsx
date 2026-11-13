@@ -11,6 +11,7 @@ export const Footer = () => {
       <div className="flex justify-center gap-8">
         {socialNetworks.map((link) => (
           <Link
+            key={link.label}
             url={link.url}
             className="text-text hover:text-text-muted"
             target

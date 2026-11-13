@@ -10,7 +10,7 @@ const styleTask = '  m-4 flex flex-col gap-2 items-center justify-center';
 export const TaskList = () => {
   return (
     <ul className={task ? styleTask : styleNone}>
-      {task ? (
+      {task.length > 0 ? (
         <>
           <TaskItems id="1" task="HolaMundo" />
         </>
