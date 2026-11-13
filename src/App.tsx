@@ -5,6 +5,7 @@ import {
   TaskForm,
   Footer,
   Filters,
+  TaskList,
 } from '@components';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <div className="border-border bg-surface w-full rounded-xl border p-4">
         <TaskForm />
         <Filters />
+        <TaskList />
       </div>
       <Footer />
     </div>
