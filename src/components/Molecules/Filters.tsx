@@ -1,20 +1,20 @@
 import { filtersContent } from '@/utils';
 import { Button } from '@components';
 
-const styleBase =
-  'border-border rounded-xl border bg-transparent px-4 py-2 text-xs font-bold hover:bg-bg/50';
+const styleBase = 'items-center text-sm font-bold';
 
 export const Filters = () => {
   return (
-    <div className="flex justify-center gap-3 px-2 py-4">
+    <div className="flex flex-col gap-6 p-4">
       {filtersContent.map((item) => {
         return (
           <Button
-            key={item.id}
+            key={item.label}
             type="button"
-            ariaLabel={item.ariaLabel}
+            onClick={() => {}}
             className={`${styleBase} ${item.colorText}`}
           >
+            <item.icon className="size-4" />
             {item.label}
           </Button>
         );

@@ -7,11 +7,19 @@ interface Props {
   label: string;
   type?: string;
   error?: FieldError;
+  placeholder?: string;
 }
 
 const styleBase = 'border-border bg-bg/80 w-full rounded-xl border px-4 py-2';
 
-export const Input = ({ name, control, label, type, error }: Props) => {
+export const Input = ({
+  name,
+  control,
+  label,
+  type,
+  error,
+  placeholder,
+}: Props) => {
   return (
     <div className="flex w-full flex-col text-center">
       <label htmlFor={name} className="sr-only">
@@ -26,11 +34,12 @@ export const Input = ({ name, control, label, type, error }: Props) => {
             id={name}
             type={type}
             {...field}
-            placeholder="Agrega una nueva tarea"
+            placeholder={placeholder}
             className={`${styleBase} ${error ? 'border-danger' : ''}`}
           />
         )}
       />
+
       {error && (
         <p className="text-danger mt-2 text-sm text-balance">{error.message}</p>
       )}

@@ -1,33 +1,32 @@
+import type { IconType } from 'react-icons/lib';
+import { SiTask } from 'react-icons/si';
+import { BiTask, BiTaskX, BiTrash } from 'react-icons/bi';
+
 interface Props {
-  id: string;
+  icon: IconType;
   label: string;
-  ariaLabel: string;
   colorText: string;
 }
 
 export const filtersContent: Props[] = [
   {
-    id: 'btnAll',
+    icon: SiTask,
     label: 'Todas',
-    ariaLabel: 'todas las tareas',
     colorText: 'text-text-muted',
   },
   {
-    id: 'btnEarrings',
+    icon: BiTaskX,
     label: 'Pendientes',
-    ariaLabel: 'tareas pendientes',
     colorText: 'text-text-muted',
   },
   {
-    id: 'btnCompleted',
+    icon: BiTask,
     label: 'Completadas',
-    ariaLabel: 'tareas completadas',
     colorText: 'text-text-muted',
   },
   {
-    id: 'btnDeleted',
+    icon: BiTrash,
     label: 'Eliminar',
-    ariaLabel: 'Eliminar completadas',
     colorText: 'text-danger',
   },
 ];
