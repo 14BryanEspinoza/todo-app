@@ -1,30 +1,39 @@
 import { FaTasks } from 'react-icons/fa';
 import { IoCheckmarkDone } from 'react-icons/io5';
 import { MdOutlineIndeterminateCheckBox } from 'react-icons/md';
+import type { Task } from '@models';
 import { Badged } from '@components/Atoms';
 
-export const Statistics = () => {
+interface Props {
+  tasks: Task[];
+}
+
+export const Statistics = ({ tasks }: Props) => {
+  const total = tasks.length;
+  const completed = tasks.filter((task) => task.completed).length;
+  const pending = total - completed;
+
   return (
     <div className="flex flex-col gap-2 p-4">
       <Badged
-        key={'totales'}
+        key={'total'}
         icon={<FaTasks className="size-4" />}
         label="Totales"
-        value={5}
+        value={total}
       />
 
       <Badged
-        key={'realizadas'}
+        key={'completed'}
         icon={<IoCheckmarkDone className="size-4" />}
-        label="Realizadas"
-        value={3}
+        label="Completadas"
+        value={completed}
       />
 
       <Badged
-        key={'pendientes'}
+        key={'pending'}
         icon={<MdOutlineIndeterminateCheckBox className="size-4" />}
         label="Pendientes"
-        value={2}
+        value={pending}
       />
     </div>
   );

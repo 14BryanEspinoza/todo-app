@@ -1,3 +1,4 @@
+import type { Task } from '@models';
 import { dateShort } from '@utils';
 import {
   Filters,
@@ -8,7 +9,11 @@ import {
 } from '@components/Molecules';
 import { Time } from '@components/Atoms';
 
-export const Aside = () => {
+interface Props {
+  tasks: Task[];
+}
+
+export const Aside = ({ tasks }: Props) => {
   return (
     <aside className="bg-surface border-border m-4 flex h-[calc(100dvh-2rem)] w-70 flex-col gap-4 rounded-xl border p-4 shadow-lg shadow-black">
       <Title />
@@ -24,7 +29,7 @@ export const Aside = () => {
       <div>
         <h2 className="text-text/80 text-base font-bold">Estadísticas</h2>
 
-        <Statistics />
+        <Statistics tasks={tasks} />
       </div>
 
       <div className="border-border my-2 mt-auto flex items-center justify-between border-t-2 px-4 pt-6">
