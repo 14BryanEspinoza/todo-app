@@ -1,32 +1,28 @@
 import type { IconType } from 'react-icons/lib';
 import { SiTask } from 'react-icons/si';
-import { BiTask, BiTaskX, BiTrash } from 'react-icons/bi';
+import { BiTask, BiTaskX } from 'react-icons/bi';
+import type { TaskFilter } from '@models';
 
-interface Props {
-  icon: IconType;
+interface FilterItem {
+  id: TaskFilter;
   label: string;
-  colorText: string;
+  icon: IconType;
 }
 
-export const filtersContent: Props[] = [
+export const filtersContent: FilterItem[] = [
   {
-    icon: SiTask,
+    id: 'all',
     label: 'Todas',
-    colorText: 'text-text-muted',
+    icon: SiTask,
   },
   {
-    icon: BiTaskX,
+    id: 'active',
     label: 'Pendientes',
-    colorText: 'text-text-muted',
+    icon: BiTaskX,
   },
   {
-    icon: BiTask,
+    id: 'completed',
     label: 'Completadas',
-    colorText: 'text-text-muted',
-  },
-  {
-    icon: BiTrash,
-    label: 'Eliminar',
-    colorText: 'text-danger',
+    icon: BiTask,
   },
 ];

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Task } from '@models';
+import type { Task, TaskFilter } from '@models';
 import { Aside } from '@components';
 
 const tasksFake: Task[] = [
@@ -25,10 +25,11 @@ const tasksFake: Task[] = [
 
 function App() {
   const [tasks] = useState<Task[]>(tasksFake);
+  const [filter, setFilter] = useState<TaskFilter>('all');
 
   return (
     <>
-      <Aside tasks={tasks} />
+      <Aside tasks={tasks} filter={filter} onFilterChanged={setFilter} />
     </>
   );
 }

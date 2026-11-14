@@ -1,4 +1,4 @@
-import type { Task } from '@models';
+import type { Task, TaskFilter } from '@models';
 import { dateShort } from '@utils';
 import {
   Filters,
@@ -11,9 +11,11 @@ import { Time } from '@components/Atoms';
 
 interface Props {
   tasks: Task[];
+  filter: TaskFilter;
+  onFilterChanged: (filter: TaskFilter) => void;
 }
 
-export const Aside = ({ tasks }: Props) => {
+export const Aside = ({ tasks, filter, onFilterChanged }: Props) => {
   return (
     <aside className="bg-surface border-border m-4 flex h-[calc(100dvh-2rem)] w-70 flex-col gap-4 rounded-xl border p-4 shadow-lg shadow-black">
       <Title />
@@ -23,7 +25,7 @@ export const Aside = ({ tasks }: Props) => {
       <div className="my-4">
         <h2 className="text-text/80 text-base font-bold">Filtros</h2>
 
-        <Filters />
+        <Filters active={filter} onFilterChange={onFilterChanged} />
       </div>
 
       <div>
