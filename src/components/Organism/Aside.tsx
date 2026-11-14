@@ -12,20 +12,28 @@ import { Time } from '@components/Atoms';
 interface Props {
   tasks: Task[];
   filter: TaskFilter;
+  search: string;
   onFilterChanged: (filter: TaskFilter) => void;
+  onSearchChange: (value: string) => void;
 }
 
-export const Aside = ({ tasks, filter, onFilterChanged }: Props) => {
+export const Aside = ({
+  tasks,
+  filter,
+  search,
+  onFilterChanged,
+  onSearchChange,
+}: Props) => {
   return (
     <aside className="bg-surface border-border m-4 flex h-[calc(100dvh-2rem)] w-70 flex-col gap-4 rounded-xl border p-4 shadow-lg shadow-black">
       <Title />
 
-      <SearchBar />
+      <SearchBar value={search} onChange={onSearchChange} />
 
       <div className="my-4">
         <h2 className="text-text/80 text-base font-bold">Filtros</h2>
 
-        <Filters active={filter} onFilterChange={onFilterChanged} />
+        <Filters active={filter} onFilterChanged={onFilterChanged} />
       </div>
 
       <div>

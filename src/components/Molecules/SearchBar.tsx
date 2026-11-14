@@ -1,32 +1,26 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { type SubmitHandler, useForm } from 'react-hook-form';
-import { type TaskFormValue, taskSchema } from '@/models/schema';
-import { Input } from '@components/Atoms';
+interface Props {
+  value: string;
+  onChange: (value: string) => void;
+}
 
-export const SearchBar = () => {
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<TaskFormValue>({
-    resolver: zodResolver(taskSchema),
-    mode: 'onBlur',
-  });
+const styleBase = 'border-border bg-bg/80 w-full rounded-xl border px-4 py-2';
 
-  const onSubmit: SubmitHandler<TaskFormValue> = (data) => {
-    return data;
-  };
-
+export const SearchBar = ({ value, onChange }: Props) => {
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Input
-        name="task"
-        control={control}
-        label="Tarea"
-        type="text"
-        error={errors.task}
+    <div className="flex w-full flex-col text-center">
+      <label htmlFor="task-search" className="sr-only">
+        Buscar tareas
+      </label>
+
+      <input
+        id="task-search"
+        type="search"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
         placeholder="Buscar tarea"
+        autoComplete="off"
+        className={styleBase}
       />
-    </form>
+    </div>
   );
 };

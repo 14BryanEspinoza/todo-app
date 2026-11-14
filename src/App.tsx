@@ -26,10 +26,17 @@ const tasksFake: Task[] = [
 function App() {
   const [tasks] = useState<Task[]>(tasksFake);
   const [filter, setFilter] = useState<TaskFilter>('all');
+  const [search, setSearch] = useState('');
 
   return (
     <>
-      <Aside tasks={tasks} filter={filter} onFilterChanged={setFilter} />
+      <Aside
+        tasks={tasks}
+        filter={filter}
+        onFilterChanged={setFilter}
+        search={search}
+        onSearchChange={setSearch}
+      />
     </>
   );
 }
