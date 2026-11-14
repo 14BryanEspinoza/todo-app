@@ -1,36 +1,38 @@
 import { GrTrash } from 'react-icons/gr';
-import { MdOutlineCheckBoxOutlineBlank } from 'react-icons/md';
 import { MdOutlineCheckBox } from 'react-icons/md';
+import type { Task, TaskId } from '@models';
 import { Button } from '@components/Atoms';
 
 interface Props {
-  id: string;
-  task: string;
+  task: Task;
+  onToggle: (id: TaskId) => void;
+  onRemove: (id: TaskId) => void;
 }
 
-const isCheck = true;
-
-export const TaskItems = ({ id, task }: Props) => {
+export const TaskItem = ({ task, onToggle, onRemove }: Props) => {
   return (
-    <div className="bg-bg/50 border-border mr-2 flex w-full items-center gap-4 rounded-xl border p-4">
-      <input type="checkbox" name={id} id={id} className="sr-only" />
+    <li className="bg-bg/50 border-border mr-2 flex w-full items-center gap-4 rounded-xl border p-4">
+      <label className="flex flex-1 cursor-pointer items-center gap-4 select-none">
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => onToggle(task.id)}
+          className="peer sr-only"
+        />
 
-      {!isCheck ? (
-        <MdOutlineCheckBoxOutlineBlank size={30} />
-      ) : (
-        <MdOutlineCheckBox size={30} />
-      )}
+        <MdOutlineCheckBox
+          size={30}
+          className="text-text-muted peer-checked:text-primary shrink-0"
+        />
 
-      <label
-        htmlFor={id}
-        className="text-text size-full cursor-pointer text-left select-none"
-      >
-        {task}
+        <span className="text-text peer-checked:text-text-muted size-full text-left peer-checked:line-through">
+          {task.title}
+        </span>
       </label>
 
-      <Button>
+      <Button className="shrink-0" onClick={() => onRemove(task.id)}>
         <GrTrash size={20} />
       </Button>
-    </div>
+    </li>
   );
 };

@@ -15,9 +15,9 @@ export const dateShort = ({ date }: Props) => {
 
 export const dateLong = ({ date }: Props) => {
   const formatLong = new Intl.DateTimeFormat('es-ES', {
-    weekday: 'short',
-    year: '2-digit',
-    month: 'numeric',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
     day: 'numeric',
   }).format(date);
 

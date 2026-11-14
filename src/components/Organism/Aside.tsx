@@ -15,6 +15,7 @@ interface Props {
   search: string;
   onFilterChanged: (filter: TaskFilter) => void;
   onSearchChange: (value: string) => void;
+  className?: string;
 }
 
 export const Aside = ({
@@ -23,9 +24,12 @@ export const Aside = ({
   search,
   onFilterChanged,
   onSearchChange,
+  className,
 }: Props) => {
   return (
-    <aside className="bg-surface border-border m-4 flex h-[calc(100dvh-2rem)] w-70 flex-col gap-4 rounded-xl border p-4 shadow-lg shadow-black">
+    <aside
+      className={`bg-surface border-border m-4 flex h-[calc(100dvh-2rem)] w-[20dvw] flex-col gap-4 rounded-xl border p-4 shadow-lg shadow-black ${className}`}
+    >
       <Title />
 
       <SearchBar value={search} onChange={onSearchChange} />

@@ -1,9 +1,13 @@
 import { socialNetworks } from '@/utils';
 import { Link } from '@components/Atoms';
 
-export const Footer = () => {
+interface Props {
+  className?: string;
+}
+
+export const Footer = ({ className }: Props) => {
   return (
-    <footer className="flex flex-col gap-8 text-center">
+    <footer className={`flex flex-col gap-6 text-center ${className}`}>
       <p className="text-text font-serif text-sm tracking-widest italic">
         "Programa no para resolver problemas, sino para crear soluciones."
       </p>

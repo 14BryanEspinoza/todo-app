@@ -1,26 +1,48 @@
 import { IoMdCheckboxOutline } from 'react-icons/io';
-import type { Task } from '@/models';
-import { TaskItems } from '@components/Molecules';
+import type { Task, TaskId } from '@/models';
+import { dateLong } from '@/utils';
+import { AddTask, TaskItem } from '@components/Molecules';
+import { Time } from '@components/Atoms';
 
-const task: Task[] = [];
+interface Props {
+  tasks: Task[];
+  onToggle: (id: TaskId) => void;
+  onRemove: (id: TaskId) => void;
+}
 
-const styleNone =
-  'text-text-muted border-border m-4 flex min-h-40 items-center justify-center border-r-4 text-center';
-const styleTask = '  m-4 flex flex-col gap-2 items-center justify-center';
+export const TaskList = ({ tasks, onToggle, onRemove }: Props) => {
+  if (tasks.length === 0) {
+    return (
+      <p className="text-text-muted flex flex-col items-center justify-center gap-2 py-10">
+        <IoMdCheckboxOutline className="size-4" />
+        No hay tareas que mostrar
+      </p>
+    );
+  }
 
-export const TaskList = () => {
   return (
-    <ul className={task ? styleTask : styleNone}>
-      {task.length > 0 ? (
-        <>
-          <TaskItems id="1" task="HolaMundo" />
-        </>
-      ) : (
-        <p className="flex flex-col items-center gap-2">
-          <IoMdCheckboxOutline size={40} />
-          No hay tareas que mostrar
-        </p>
-      )}
-    </ul>
+    <>
+      <div className="my-6 flex w-fit flex-col gap-2">
+        <Time
+          date={dateLong({ date: new Date() })}
+          className="text-lg font-bold"
+        />
+
+        <p className="text-text-muted">Lista de tareas</p>
+      </div>
+
+      <AddTask />
+
+      <ul className="flex flex-col gap-2">
+        {tasks.map((task) => (
+          <TaskItem
+            key={task.id}
+            task={task}
+            onToggle={onToggle}
+            onRemove={onRemove}
+          />
+        ))}
+      </ul>
+    </>
   );
 };
