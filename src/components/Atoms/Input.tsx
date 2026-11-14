@@ -1,9 +1,9 @@
 import { type Control, type FieldError, Controller } from 'react-hook-form';
-import { type TaskFormType } from '@models';
+import { type TaskFormValue } from '@models';
 
 interface Props {
-  name: keyof TaskFormType;
-  control: Control<TaskFormType>;
+  name: keyof TaskFormValue;
+  control: Control<TaskFormValue>;
   label: string;
   type?: string;
   error?: FieldError;

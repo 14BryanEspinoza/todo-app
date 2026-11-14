@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { type SubmitHandler, useForm } from 'react-hook-form';
-import { type TaskFormType, taskSchema } from '@/models/schema';
+import { type TaskFormValue, taskSchema } from '@/models/schema';
 import { HiOutlinePlusSm } from 'react-icons/hi';
 import { Button, Input } from '@components/Atoms';
 
@@ -9,12 +9,12 @@ export const TaskForm = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<TaskFormType>({
+  } = useForm<TaskFormValue>({
     resolver: zodResolver(taskSchema),
     mode: 'onBlur',
   });
 
-  const onSubmit: SubmitHandler<TaskFormType> = (data) => {
+  const onSubmit: SubmitHandler<TaskFormValue> = (data) => {
     return data;
   };
 

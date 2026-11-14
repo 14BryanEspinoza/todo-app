@@ -1,7 +1,8 @@
 import { IoMdCheckboxOutline } from 'react-icons/io';
+import type { Task } from '@/models';
 import { TaskItems } from '@components/Molecules';
 
-const task = [];
+const task: Task[] = [];
 
 const styleNone =
   'text-text-muted border-border m-4 flex min-h-40 items-center justify-center border-r-4 text-center';
