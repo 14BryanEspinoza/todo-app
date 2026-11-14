@@ -25,9 +25,12 @@
     /* Paths */
     "paths": {
       "@/*": ["./src/*"],
-      "@components": ["./src/components/"],
-      "@models": ["./src/models/"],
-      "@utils": ["./src/utils/"]
+      "@components": ["./src/components/index.ts"],
+      "@components/*": ["./src/components/*"],
+      "@models": ["./src/models/index.ts"],
+      "@models/*": ["./src/models/*"],
+      "@utils": ["./src/utils/index.ts"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "include": ["src"]

@@ -1,5 +1,5 @@
 import { IoMdCheckboxOutline } from 'react-icons/io';
-import { TaskItems } from '@components';
+import { TaskItems } from '@components/Molecules';
 
 const task = [];
 

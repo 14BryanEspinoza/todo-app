@@ -1,5 +1,5 @@
-import { filtersContent } from '@/utils';
-import { Button } from '@components';
+import { filtersContent } from '@utils';
+import { Button } from '@components/Atoms';
 
 const styleBase = 'items-center text-sm font-bold';
 

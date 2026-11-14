@@ -1,12 +1,12 @@
-import { dateShort } from '@/utils/timeContent';
+import { dateShort } from '@utils';
 import {
   Filters,
   SearchBar,
   Statistics,
-  Time,
   Title,
   ToggleTheme,
-} from '@components';
+} from '@components/Molecules';
+import { Time } from '@components/Atoms';
 
 export const Aside = () => {
   return (

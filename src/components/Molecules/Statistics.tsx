@@ -1,7 +1,7 @@
 import { FaTasks } from 'react-icons/fa';
 import { IoCheckmarkDone } from 'react-icons/io5';
 import { MdOutlineIndeterminateCheckBox } from 'react-icons/md';
-import { Badged } from '@components';
+import { Badged } from '@components/Atoms';
 
 export const Statistics = () => {
   return (

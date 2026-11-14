@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 import { type TaskFormType, taskSchema } from '@/models/schema';
 import { HiOutlinePlusSm } from 'react-icons/hi';
-import { Button, Input } from '@components';
+import { Button, Input } from '@components/Atoms';
 
 export const TaskForm = () => {
   const {

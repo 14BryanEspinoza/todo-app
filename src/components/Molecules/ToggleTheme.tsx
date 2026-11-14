@@ -1,5 +1,5 @@
 import { BiSun } from 'react-icons/bi';
-import { Button } from '@components';
+import { Button } from '@components/Atoms';
 
 export const ToggleTheme = () => {
   return (

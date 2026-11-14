@@ -1,5 +1,5 @@
 import { socialNetworks } from '@/utils';
-import { Link } from '@components';
+import { Link } from '@components/Atoms';
 
 export const Footer = () => {
   return (

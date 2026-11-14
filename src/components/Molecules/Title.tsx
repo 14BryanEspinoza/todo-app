@@ -1,5 +1,5 @@
 import { TbLayoutSidebarRightExpand } from 'react-icons/tb';
-import { Button } from '@components';
+import { Button } from '@components/Atoms';
 
 export const Title = () => {
   return (

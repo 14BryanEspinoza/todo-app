@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 import { type TaskFormType, taskSchema } from '@/models/schema';
-import { Input } from '@components';
+import { Input } from '@components/Atoms';
 
 export const SearchBar = () => {
   const {

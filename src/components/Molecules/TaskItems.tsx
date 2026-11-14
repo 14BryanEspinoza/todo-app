@@ -1,7 +1,7 @@
 import { GrTrash } from 'react-icons/gr';
 import { MdOutlineCheckBoxOutlineBlank } from 'react-icons/md';
 import { MdOutlineCheckBox } from 'react-icons/md';
-import { Button } from '@components';
+import { Button } from '@components/Atoms';
 
 interface Props {
   id: string;
