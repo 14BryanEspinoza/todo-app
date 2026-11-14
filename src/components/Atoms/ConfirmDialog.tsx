@@ -11,19 +11,11 @@ export const ConfirmDialog = () => {
         </p>
 
         <div className="mt-6 flex justify-end gap-2">
-          <Button
-            type="button"
-            ariaLabel="cancelar eliminación"
-            className="border-border text-text border bg-transparent px-4 py-2"
-          >
+          <Button className="border-border text-text border bg-transparent px-4 py-2">
             Cancelar
           </Button>
 
-          <Button
-            type="button"
-            ariaLabel="confirmar elimination"
-            className="border-danger text-text bg-danger border px-4 py-2"
-          >
+          <Button className="border-danger text-text bg-danger border px-4 py-2">
             Limpiar
           </Button>
         </div>

@@ -8,11 +8,7 @@ export const Title = () => {
         ToDo App
       </h1>
 
-      <Button
-        type="button"
-        onClick={() => {}}
-        className="bg-bg/50 border-border rounded-xl border p-2"
-      >
+      <Button className="bg-bg/50 border-border rounded-xl border p-2">
         <TbLayoutSidebarRightExpand className="size-6" />
       </Button>
     </div>

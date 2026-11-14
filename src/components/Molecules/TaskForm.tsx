@@ -28,11 +28,7 @@ export const TaskForm = () => {
         error={errors.task}
       />
 
-      <Button
-        type="submit"
-        ariaLabel="agregar tarea"
-        className="bg-primary hover:bg-primary-hover p-3"
-      >
+      <Button className="bg-primary hover:bg-primary-hover p-3">
         <HiOutlinePlusSm size={20} />
       </Button>
     </form>

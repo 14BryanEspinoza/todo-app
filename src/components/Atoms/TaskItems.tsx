@@ -28,7 +28,7 @@ export const TaskItems = ({ id, task }: Props) => {
         {task}
       </label>
 
-      <Button type="button" ariaLabel="eliminar tarea">
+      <Button>
         <GrTrash size={20} />
       </Button>
     </div>
