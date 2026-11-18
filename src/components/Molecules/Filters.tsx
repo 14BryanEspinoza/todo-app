@@ -1,5 +1,5 @@
+import type { TaskFilter } from '@models';
 import { filtersContent } from '@utils';
-import type { TaskFilter } from '@/models';
 import { Button } from '@components/Atoms';
 
 interface Props {
@@ -20,7 +20,7 @@ export const Filters = ({ active, onFilterChanged }: Props) => {
             key={item.id}
             aria-pressed={isActive}
             onClick={() => onFilterChanged(item.id)}
-            className={`${styleBase} ${isActive ? 'text-text bg-bg/40 rounded-xl px-4 py-2' : 'text-text-muted'}`}
+            className={`${styleBase} ${isActive ? 'rounded-xl bg-bg/40 px-4 py-2 text-text' : 'text-text-muted'}`}
           >
             <item.icon className="size-4" />
             {item.label}

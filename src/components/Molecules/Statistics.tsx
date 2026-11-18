@@ -1,7 +1,7 @@
+import type { Task } from '@models';
 import { FaTasks } from 'react-icons/fa';
 import { IoCheckmarkDone } from 'react-icons/io5';
 import { MdOutlineIndeterminateCheckBox } from 'react-icons/md';
-import type { Task } from '@models';
 import { Badged } from '@components/Atoms';
 
 interface Props {

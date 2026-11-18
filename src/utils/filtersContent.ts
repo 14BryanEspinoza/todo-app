@@ -1,7 +1,7 @@
-import type { IconType } from 'react-icons/lib';
-import { SiTask } from 'react-icons/si';
-import { BiTask, BiTaskX } from 'react-icons/bi';
 import type { TaskFilter } from '@models';
+import type { IconType } from 'react-icons/lib';
+import { BiTask, BiTaskX } from 'react-icons/bi';
+import { SiTask } from 'react-icons/si';
 
 interface FilterItem {
   id: TaskFilter;

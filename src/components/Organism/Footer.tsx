@@ -1,4 +1,4 @@
-import { socialNetworks } from '@/utils';
+import { socialNetworks } from '@utils';
 import { Link } from '@components/Atoms';
 
 interface Props {
