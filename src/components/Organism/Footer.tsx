@@ -7,8 +7,8 @@ interface Props {
 
 export const Footer = ({ className }: Props) => {
   return (
-    <footer className={`flex flex-col gap-6 text-center ${className}`}>
-      <p className="text-text font-serif text-sm tracking-widest italic">
+    <footer className={`mb-4 flex flex-col gap-6 text-center ${className}`}>
+      <p className="font-serif text-sm tracking-widest text-text italic">
         "Programa no para resolver problemas, sino para crear soluciones."
       </p>
 
@@ -20,7 +20,7 @@ export const Footer = ({ className }: Props) => {
             className="text-text hover:text-text-muted"
             target
           >
-            {<link.icon size={20} />}
+            <link.icon className="size-5" />
           </Link>
         ))}
       </div>
