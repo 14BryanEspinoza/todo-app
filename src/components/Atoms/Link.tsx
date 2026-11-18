@@ -15,7 +15,7 @@ export const Link = ({ url, children, className, target }: Props) => {
       href={url}
       className={`${styleBase} ${className}`}
       target={target ? '_blank' : '_self'}
-      rel={target ? 'noopener noreferrer' : ''}
+      rel={target ? 'noopener noreferrer' : undefined}
     >
       {children}
     </a>
