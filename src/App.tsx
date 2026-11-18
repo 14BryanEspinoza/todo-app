@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Task, TaskFilter, TaskId } from '@models';
-import { Aside, Footer, TaskList } from '@components';
+import { AddTask, Aside, Footer, Header, TaskList } from '@components';
 
 const template =
   "[grid-template-areas:'aside_main_main'_'aside_main_main'_'aside_footer_footer']";
@@ -67,6 +67,10 @@ function App() {
       />
 
       <main className="m-4 min-w-0 [grid-area:main]">
+        <Header />
+
+        <AddTask />
+
         <TaskList
           tasks={visibleTask}
           onToggle={toggleTask}
