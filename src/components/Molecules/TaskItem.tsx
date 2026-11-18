@@ -1,6 +1,9 @@
-import { GrTrash } from 'react-icons/gr';
-import { MdOutlineCheckBox } from 'react-icons/md';
 import type { Task, TaskId } from '@models';
+import { GrTrash } from 'react-icons/gr';
+import {
+  MdOutlineCheckBox,
+  MdOutlineCheckBoxOutlineBlank,
+} from 'react-icons/md';
 import { Button } from '@components/Atoms';
 
 interface Props {
@@ -11,7 +14,7 @@ interface Props {
 
 export const TaskItem = ({ task, onToggle, onRemove }: Props) => {
   return (
-    <li className="bg-bg/50 border-border mr-2 flex w-full items-center gap-4 rounded-xl border p-4">
+    <li className="flex w-full items-center border-t border-border p-4">
       <label className="flex flex-1 cursor-pointer items-center gap-4 select-none">
         <input
           type="checkbox"
@@ -20,18 +23,19 @@ export const TaskItem = ({ task, onToggle, onRemove }: Props) => {
           className="peer sr-only"
         />
 
-        <MdOutlineCheckBox
-          size={30}
-          className="text-text-muted peer-checked:text-primary shrink-0"
-        />
+        {task.completed ? (
+          <MdOutlineCheckBox className="size-6 text-text-muted" />
+        ) : (
+          <MdOutlineCheckBoxOutlineBlank className="size-6 text-text" />
+        )}
 
-        <span className="text-text peer-checked:text-text-muted size-full text-left peer-checked:line-through">
+        <span className="text-text peer-checked:text-text-muted peer-checked:line-through">
           {task.title}
         </span>
       </label>
 
-      <Button className="shrink-0" onClick={() => onRemove(task.id)}>
-        <GrTrash size={20} />
+      <Button onClick={() => onRemove(task.id)}>
+        <GrTrash className="size-6" />
       </Button>
     </li>
   );
