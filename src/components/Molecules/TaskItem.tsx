@@ -14,7 +14,7 @@ interface Props {
 
 export const TaskItem = ({ task, onToggle, onRemove }: Props) => {
   return (
-    <li className="flex w-full items-center border-t border-border p-4">
+    <li className="flex w-full items-center border-b border-border p-4 text-sm">
       <label className="flex flex-1 cursor-pointer items-center gap-4 select-none">
         <input
           type="checkbox"
@@ -24,9 +24,9 @@ export const TaskItem = ({ task, onToggle, onRemove }: Props) => {
         />
 
         {task.completed ? (
-          <MdOutlineCheckBox className="size-6 text-text-muted" />
+          <MdOutlineCheckBox className="size-5 text-text-muted" />
         ) : (
-          <MdOutlineCheckBoxOutlineBlank className="size-6 text-text" />
+          <MdOutlineCheckBoxOutlineBlank className="size-5 text-text" />
         )}
 
         <span className="text-text peer-checked:text-text-muted peer-checked:line-through">
@@ -35,7 +35,7 @@ export const TaskItem = ({ task, onToggle, onRemove }: Props) => {
       </label>
 
       <Button onClick={() => onRemove(task.id)}>
-        <GrTrash className="size-6" />
+        <GrTrash className="size-5" />
       </Button>
     </li>
   );

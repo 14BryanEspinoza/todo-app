@@ -2,8 +2,7 @@ import { useState } from 'react';
 import type { Task, TaskFilter, TaskId } from '@models';
 import { AddTask, Aside, Footer, Header, TaskList } from '@components';
 
-const template =
-  "[grid-template-areas:'aside_main_main'_'aside_main_main'_'aside_footer_footer']";
+const template = "[grid-template-areas:'aside_main'_'aside_footer']";
 
 const tasksFake: Task[] = [
   {

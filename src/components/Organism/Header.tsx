@@ -6,10 +6,10 @@ export const Header = () => {
     <div className="my-4 flex w-fit flex-col gap-2">
       <Time
         date={dateLong({ date: new Date() })}
-        className="text-lg font-bold"
+        className="text-base font-bold"
       />
 
-      <p className="text-text-muted">Lista de tareas</p>
+      <p className="text-sm text-text-muted">Lista de tareas</p>
     </div>
   );
 };
