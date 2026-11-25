@@ -8,7 +8,7 @@ interface Props {
 export const Time = ({ date, className }: Props) => {
   return (
     <time
-      className={`text-text-muted text-center text-base tracking-widest uppercase ${className}`}
+      className={`text-center text-base tracking-widest text-text-muted uppercase ${className}`}
     >
       {date}
     </time>

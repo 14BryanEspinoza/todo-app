@@ -14,7 +14,7 @@ export const Badged = ({ icon, label, value }: Props) => {
         <p className="text-text-muted">{label}</p>
       </div>
 
-      <span className="text-primary bg-bg/40 rounded-md px-4 py-2 font-bold">
+      <span className="rounded-md bg-bg/40 px-4 py-2 font-bold text-primary">
         {value}
       </span>
     </div>
