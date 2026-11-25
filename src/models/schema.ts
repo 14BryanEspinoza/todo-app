@@ -1,11 +1,10 @@
 import { z } from 'zod';
 
 export const taskSchema = z.object({
-  task: z
+  title: z
     .string()
-    .trim()
     .min(5, 'La tarea tiene que tener mas de 4 caracteres')
-    .max(20, 'La tarea no puede superar los 20 caracteres'),
+    .max(50, 'La tarea no puede superar los 50 caracteres'),
 });
 
 export type TaskFormValue = z.infer<typeof taskSchema>;

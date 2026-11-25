@@ -4,29 +4,8 @@ import { AddTask, Aside, Footer, Header, TaskList } from '@components';
 
 const template = "[grid-template-areas:'aside_main'_'aside_footer']";
 
-const tasksFake: Task[] = [
-  {
-    id: '1',
-    title: 'Aprender useState',
-    completed: true,
-    createdAt: '2026-11-13T10:00:00.000Z',
-  },
-  {
-    id: '2',
-    title: 'Cablear el aside',
-    completed: true,
-    createdAt: '2026-11-13T11:00:00.000Z',
-  },
-  {
-    id: '3',
-    title: 'Entender props',
-    completed: false,
-    createdAt: '2026-11-13T12:00:00.000Z',
-  },
-];
-
 function App() {
-  const [tasks, setTask] = useState<Task[]>(tasksFake);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [filter, setFilter] = useState<TaskFilter>('all');
   const [search, setSearch] = useState('');
 
@@ -41,15 +20,26 @@ function App() {
     .filter((task) => task.title.toLocaleLowerCase().includes(normalizeSearch));
 
   const toggleTask = (id: TaskId) => {
-    setTask((prev) =>
+    setTasks((prev) =>
       prev.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task,
       ),
     );
   };
 
+  const addTasks = (title: string) => {
+    const newTask: Task = {
+      id: crypto.randomUUID(),
+      title,
+      completed: false,
+      createdAt: new Date().toISOString(),
+    };
+
+    setTasks((prev) => [...prev, newTask]);
+  };
+
   const removeTask = (id: TaskId) => {
-    setTask((prev) => prev.filter((task) => task.id !== id));
+    setTasks((prev) => prev.filter((task) => task.id !== id));
   };
 
   return (
@@ -68,7 +58,7 @@ function App() {
       <main className="m-4 min-w-0 [grid-area:main]">
         <Header />
 
-        <AddTask />
+        <AddTask onAdd={addTasks} />
 
         <TaskList
           tasks={visibleTask}
