@@ -35,7 +35,7 @@ function App() {
       createdAt: new Date().toISOString(),
     };
 
-    setTasks((prev) => [...prev, newTask]);
+    setTasks((prev) => [newTask, ...prev]);
   };
 
   const removeTask = (id: TaskId) => {

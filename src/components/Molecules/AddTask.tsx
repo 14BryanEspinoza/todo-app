@@ -1,9 +1,9 @@
-import { useState, type SubmitEvent } from 'react';
-import { taskSchema } from '@/models';
-import { Input } from '@components/Atoms';
+import { useState, type ChangeEvent, type SubmitEvent } from 'react';
+import { taskSchema } from '@models';
+import { Button, Input } from '@components/Atoms';
 
 interface Props {
-  onAdd: (task: string) => void;
+  onAdd: (title: string) => void;
 }
 
 export const AddTask = ({ onAdd }: Props) => {
@@ -25,22 +25,38 @@ export const AddTask = ({ onAdd }: Props) => {
     setError(null);
   };
 
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (error) setError(null);
+
+    setTitle(e.target.value);
+  };
+
   return (
-    <form onSubmit={handleSubmit} className="mb-6">
-      <Input
-        id="task-add"
-        label="Agregar tarea"
-        type="text"
-        placeholder="Agregar tarea"
-        autoComplete="off"
-        value={title}
-        onChange={(event) => setTitle(event.target.value)}
-        aria-invalid={error ? true : undefined}
-        aria-describedby={error ? 'task-add-error' : undefined}
-      />
+    <form onSubmit={handleSubmit} className="relative mb-6">
+      <div className="flex items-center">
+        <Input
+          id="task-add"
+          label="Agregar tarea"
+          type="text"
+          placeholder="Agregar tarea"
+          autoComplete="off"
+          value={title}
+          onChange={onChange}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={error ? 'task-add-error' : undefined}
+          className="rounded-xl"
+        />
+
+        <Button
+          type="submit"
+          className="absolute right-0 rounded-r-xl border border-border bg-primary px-4 py-2 text-sm font-bold text-text-inverse hover:scale-none"
+        >
+          Agregar
+        </Button>
+      </div>
 
       {error && (
-        <p id="task-add-error" className="mt-2 text-sm text-danger">
+        <p id="task-add-error" className="mt-2 ml-6 text-sm text-danger">
           {error}
         </p>
       )}

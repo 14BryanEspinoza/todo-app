@@ -15,6 +15,7 @@ export const SearchBar = ({ value, onChange }: Props) => {
       onChange={(event) => onChange(event.target.value)}
       placeholder="Buscar tarea"
       autoComplete="off"
+      className="rounded-xl"
     />
   );
 };
