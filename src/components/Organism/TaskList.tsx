@@ -20,7 +20,7 @@ export const TaskList = ({ tasks, onToggle, onRemove }: Props) => {
 
   return (
     <>
-      <ul className="flex flex-col gap-2">
+      <ul className="flex h-[57dvh] flex-col gap-2 overflow-auto">
         {tasks.map((task) => (
           <TaskItem
             key={task.id}
