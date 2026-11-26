@@ -27,6 +27,16 @@
     <meta property="twitter:image" content="" />
     <meta property="twitter:image:alt" content="" />
 
+    <script>
+      try {
+        const theme = localStorage.getItem('todo-app/theme:v1');
+
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {}
+    </script>
+
     <link rel="canonical" href="" />
 
     <link rel="icon" type="image/svg+xml" href="./favicon.png" />
