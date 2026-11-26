@@ -6,7 +6,8 @@ interface Props extends ComponentPropsWithoutRef<'input'> {
   className?: string;
 }
 
-const styleBase = 'text-sm border-border bg-bg/80 w-full border px-4 py-2';
+const styleBase =
+  'text-sm border-border rounded-xl bg-bg/80 w-full border px-4 py-2';
 
 export const Input = ({ id, label, className = '', ...rest }: Props) => {
   return (

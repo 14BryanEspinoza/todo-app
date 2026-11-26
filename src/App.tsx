@@ -1,13 +1,18 @@
-import { useState } from 'react';
-import type { Task, TaskFilter, TaskId } from '@models';
+import { useEffect, useState } from 'react';
+import { type Task, type TaskFilter, type TaskId } from '@models';
+import { loadTasks, saveTasks } from '@utils';
 import { AddTask, Aside, Footer, Header, TaskList } from '@components';
 
 const template = "[grid-template-areas:'aside_main'_'aside_footer']";
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(loadTasks);
   const [filter, setFilter] = useState<TaskFilter>('all');
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    saveTasks(tasks);
+  }, [tasks]);
 
   const normalizeSearch = search.trim().toLocaleLowerCase();
 

@@ -44,12 +44,12 @@ export const AddTask = ({ onAdd }: Props) => {
           onChange={onChange}
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? 'task-add-error' : undefined}
-          className="rounded-xl"
+          className="pr-28"
         />
 
         <Button
           type="submit"
-          className="absolute right-0 rounded-r-xl border border-border bg-primary px-4 py-2 text-sm font-bold text-text-inverse hover:scale-none"
+          className="absolute right-0 rounded-r-xl border border-border bg-primary px-4 py-2 text-sm font-bold text-text-inverse hover:scale-none hover:bg-primary-hover active:scale-none"
         >
           Agregar
         </Button>
