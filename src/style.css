@@ -24,6 +24,10 @@
   --color-focus: #818cf8;
 }
 
+:root {
+  color-scheme: dark;
+}
+
 [data-theme='light'] {
   color-scheme: light;
 
@@ -45,10 +49,6 @@
   --color-warning: #b45309;
 
   --color-focus: #4f46e5;
-}
-
-:root {
-  color-scheme: dark;
 }
 
 body {
